@@ -23,8 +23,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id= "@+id/username"
-        android:hint=" Username"
+        android:id= "@+id/userId"
+        android:hint=" User Name"
         android:textSize="25dp"
         android:textColorHint="@color/black"
         android:background="@drawable/backgroundtext"></EditText>
@@ -33,30 +33,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:id= "@+id/password"
+        android:hint=" Name"
+        android:id= "@+id/name"
+        android:textSize="25dp"
+        android:textColorHint="@color/black"
+        android:background="@drawable/backgroundtext"></EditText>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:hint=" Password"
-        android:textSize="25dp"
-        android:textColorHint="@color/black"
-        android:background="@drawable/backgroundtext"></EditText>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:id= "@+id/repassword"
-        android:hint=" Re-EnterPassword"
+        android:id= "@+id/password"
         android:textSize="25dp"
         android:textColorHint="@color/black"
         android:background="@drawable/backgroundtext"></EditText>
 
 
     <Button
-        android:id="@+id/signUp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Register"
+        android:id="@+id/register"
         android:textSize="20sp"
         android:textStyle="bold"
         android:backgroundTint="#25EAEA"

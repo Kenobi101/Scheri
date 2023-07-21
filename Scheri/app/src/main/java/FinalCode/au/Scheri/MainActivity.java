@@ -1,4 +1,4 @@
-package codewithcal.au.Scheri;
+package FinalCode.au.Scheri;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -14,15 +14,18 @@ import android.widget.TextView;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import static codewithcal.au.Scheri.CalendarUtils.daysInMonthArray;
-import static codewithcal.au.Scheri.CalendarUtils.monthYearFromDate;
+import static FinalCode.au.Scheri.CalendarUtils.daysInMonthArray;
+import static FinalCode.au.Scheri.CalendarUtils.monthYearFromDate;
+
+import FinalCode.au.Scheri.CalendarAdapter;
+import codewithcal.au.Scheri.R;
 
 public class MainActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
-    EditText username, password, repassword;
-    Button login, signup;
+    EditText userId, password, name;
+    Button register;
 
 
     @Override
@@ -33,12 +36,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         initWidgets();
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
-        login = findViewById(R.id.login);
-        signup = findViewById(R.id.signUp);
 
-        
     }
 
     private void initWidgets()

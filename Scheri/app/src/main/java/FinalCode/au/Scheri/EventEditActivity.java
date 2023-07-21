@@ -1,4 +1,4 @@
-package codewithcal.au.Scheri;
+package FinalCode.au.Scheri;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.time.LocalTime;
+
+import codewithcal.au.Scheri.R;
 
 public class EventEditActivity extends AppCompatActivity
 {

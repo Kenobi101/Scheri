@@ -1,4 +1,4 @@
-package codewithcal.au.Scheri;
+package FinalCode.au.Scheri;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.List;
+
+import codewithcal.au.Scheri.R;
 
 public class EventAdapter extends ArrayAdapter<Event>
 {

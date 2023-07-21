@@ -1,4 +1,4 @@
-package codewithcal.au.Scheri;
+package FinalCode.au.Scheri;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -13,8 +13,10 @@ import android.widget.TextView;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import static codewithcal.au.Scheri.CalendarUtils.daysInWeekArray;
-import static codewithcal.au.Scheri.CalendarUtils.monthYearFromDate;
+import static FinalCode.au.Scheri.CalendarUtils.daysInWeekArray;
+import static FinalCode.au.Scheri.CalendarUtils.monthYearFromDate;
+
+import codewithcal.au.Scheri.R;
 
 public class ScheduleView extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {

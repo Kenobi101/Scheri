@@ -1,4 +1,4 @@
-package codewithcal.au.Scheri;
+package FinalCode.au.Scheri;
 
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+import codewithcal.au.Scheri.R;
 
 class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
 {

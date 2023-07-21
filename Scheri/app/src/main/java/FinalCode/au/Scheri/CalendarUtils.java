@@ -1,4 +1,4 @@
-package codewithcal.au.Scheri;
+package FinalCode.au.Scheri;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

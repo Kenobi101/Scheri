@@ -11,7 +11,8 @@
         <activity android:name="FinalCode.au.Scheri.EventEditActivity"></activity>
         <activity android:name="FinalCode.au.Scheri.ScheduleView" />
         <activity android:name="FinalCode.au.Scheri.MainActivity" />
-        <activity android:name="FinalCode.au.Scheri.LoginActivity">
+        <activity android:name="FinalCode.au.Scheri.LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

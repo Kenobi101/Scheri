@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import codewithcal.au.Scheri.R;
+import FinalCode.au.Scheri.R;
 
 public class LoginActivity extends AppCompatActivity {
     @Override

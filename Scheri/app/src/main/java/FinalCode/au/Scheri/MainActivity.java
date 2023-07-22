@@ -18,7 +18,7 @@ import static FinalCode.au.Scheri.CalendarUtils.daysInMonthArray;
 import static FinalCode.au.Scheri.CalendarUtils.monthYearFromDate;
 
 import FinalCode.au.Scheri.CalendarAdapter;
-import codewithcal.au.Scheri.R;
+import FinalCode.au.Scheri.R;
 
 public class MainActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {

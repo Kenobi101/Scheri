@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-import codewithcal.au.Scheri.R;
+import FinalCode.au.Scheri.R;
 
 public class EventAdapter extends ArrayAdapter<Event>
 {

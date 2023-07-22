@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.time.LocalTime;
 
-import codewithcal.au.Scheri.R;
+import FinalCode.au.Scheri.R;
 
 public class EventEditActivity extends AppCompatActivity
 {

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import static FinalCode.au.Scheri.CalendarUtils.daysInWeekArray;
 import static FinalCode.au.Scheri.CalendarUtils.monthYearFromDate;
 
-import codewithcal.au.Scheri.R;
+import FinalCode.au.Scheri.R;
 
 public class ScheduleView extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {

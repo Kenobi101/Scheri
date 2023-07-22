@@ -8,10 +8,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ScheriApp">
-        <activity android:name="codewithcal.au.Scheri.EventEditActivity"></activity>
-        <activity android:name="codewithcal.au.Scheri.ScheduleView" />
-        <activity android:name="codewithcal.au.Scheri.MainActivity" />
-        <activity android:name="codewithcal.au.Scheri.LoginActivity">
+        <activity android:name="FinalCode.au.Scheri.EventEditActivity"></activity>
+        <activity android:name="FinalCode.au.Scheri.ScheduleView" />
+        <activity android:name="FinalCode.au.Scheri.MainActivity" />
+        <activity android:name="FinalCode.au.Scheri.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

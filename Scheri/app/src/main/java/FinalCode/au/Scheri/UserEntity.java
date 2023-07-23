@@ -24,6 +24,7 @@ public class UserEntity {
     }
 
     public void setId(Integer id) {
+        System.out.println("setId : " + id.toString());
         this.id = id;
     }
 
@@ -32,6 +33,7 @@ public class UserEntity {
     }
 
     public void setUserId(String userId) {
+        System.out.println("set userId : " + userId.toString());
         this.userId = userId;
     }
 
@@ -40,6 +42,7 @@ public class UserEntity {
     }
 
     public void setPassword(String password) {
+        System.out.println("setPassword : " + password);
         this.password = password;
     }
 
@@ -48,6 +51,7 @@ public class UserEntity {
     }
 
     public void setName(String name) {
+        System.out.println("setName : " + name);
         this.name = name;
     }
 }

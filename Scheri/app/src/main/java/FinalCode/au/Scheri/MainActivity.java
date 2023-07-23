@@ -1,8 +1,7 @@
 package FinalCode.au.Scheri;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import static FinalCode.au.Scheri.CalendarUtils.daysInMonthArray;
+import static FinalCode.au.Scheri.CalendarUtils.monthYearFromDate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,14 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
-
-import static FinalCode.au.Scheri.CalendarUtils.daysInMonthArray;
-import static FinalCode.au.Scheri.CalendarUtils.monthYearFromDate;
-
-import FinalCode.au.Scheri.CalendarAdapter;
-import FinalCode.au.Scheri.R;
+import java.lang.*;
 
 public class MainActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {

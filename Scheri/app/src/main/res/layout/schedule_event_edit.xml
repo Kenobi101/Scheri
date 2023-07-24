@@ -44,6 +44,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Set Alarm"
+        android:background="@null"
         android:textSize="20sp"
         android:textAlignment="center"
         android:textColor="@color/red"/>

@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
 {
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
+    private Button button;
     EditText userId, password, name;
     Button register;
 
@@ -30,11 +31,23 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         initWidgets();
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
+        button = (Button) findViewById(R.id.signUp);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signUpPage();
+            }
+        });
 
+    }
+
+    public  void signUpPage(){
+        Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
     }
 
     private void initWidgets()

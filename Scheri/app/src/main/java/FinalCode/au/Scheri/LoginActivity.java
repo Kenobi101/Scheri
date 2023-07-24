@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void scheduleViewer(){
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
 

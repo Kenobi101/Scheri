@@ -70,6 +70,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Log In"
+        android:onClick=""
         android:textSize="20sp"
         android:textStyle="bold"
         android:backgroundTint="#25EAEA"

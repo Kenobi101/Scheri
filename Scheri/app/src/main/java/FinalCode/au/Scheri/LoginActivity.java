@@ -25,10 +25,21 @@ public class LoginActivity extends AppCompatActivity {
                 signUpPage();
             }
         });
+
+        button  = (Button) findViewById(R.id.login);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { scheduleViewer();
+            }
+        });
     }
     public  void signUpPage(){
         Intent intent = new Intent(this, SignupActivity.class);
         startActivity(intent);
+    }
+
+    public void scheduleViewer(){
+        Intent intent = new Intent(this, MainActivity.class);
     }
 }
 

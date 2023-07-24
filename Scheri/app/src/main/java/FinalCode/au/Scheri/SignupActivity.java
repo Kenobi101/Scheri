@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import java.lang.*;
 
 
 import androidx.annotation.Nullable;
@@ -33,14 +34,34 @@ public class SignupActivity extends AppCompatActivity {
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText userIdEditText = (EditText) findViewById(R.id.userId);
-                String userId = userIdEditText.getText().toString();
+                try{
+                    EditText userIdEditText = (EditText) findViewById(R.id.userId);
+                    String userId = userIdEditText.getText().toString();
 
-                EditText nameEditText = (EditText) findViewById(R.id.name);
-                String name = nameEditText.getText().toString();
+                    EditText nameEditText = (EditText) findViewById(R.id.name);
+                    String name = nameEditText.getText().toString();
 
-                EditText passwordEditText = (EditText) findViewById(R.id.password);
-                String password = passwordEditText.getText().toString();
+                    EditText passwordEditText = (EditText) findViewById(R.id.password);
+                    String password = passwordEditText.getText().toString();
+
+                    UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+                    UserEntity userEntity = new UserEntity();
+                    userEntity.setUserId(userId);
+
+                    userEntity.setName(name);
+                    userEntity.setPassword(password);
+                    userEntity.setUserId(userId);
+
+                    UserDao userDao = userDatabase.userDao();
+                    userDao.registerUser(userEntity);
+
+                    System.out.println("Sign Up Succesfull");
+
+                    logInPage();
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
+
             }
         });
 

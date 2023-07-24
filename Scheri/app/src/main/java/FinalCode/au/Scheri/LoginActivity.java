@@ -13,7 +13,7 @@ import FinalCode.au.Scheri.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button button;
+    Button button;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

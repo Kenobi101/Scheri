@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import FinalCode.au.Scheri.R;
 
 public class SignupActivity extends AppCompatActivity {
-    private Button button;
+    Button button;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     public  void logInPage(){
-        Intent intent = new Intent(this, SignupActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 }

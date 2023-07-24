@@ -12,14 +12,15 @@
         <activity android:name="FinalCode.au.Scheri.ScheduleView" />
         <activity android:name="FinalCode.au.Scheri.MainActivity" />
         <activity android:name=".SignupActivity" android:exported="true">
-        </activity>
-        <activity android:name="FinalCode.au.Scheri.LoginActivity"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="FinalCode.au.Scheri.LoginActivity"
+            android:exported="true">
+
         </activity>
     </application>
 

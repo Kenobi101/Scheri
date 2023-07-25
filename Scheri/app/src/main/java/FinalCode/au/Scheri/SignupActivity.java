@@ -55,7 +55,7 @@ public class SignupActivity extends AppCompatActivity {
                     UserDao userDao = userDatabase.userDao();
                     userDao.registerUser(userEntity);
 
-                    System.out.println("Sign Up Succesfull");
+                    System.out.println("You have been Registered");
 
                     logInPage();
                 }catch (Exception e){

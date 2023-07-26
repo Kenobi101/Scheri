@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#BADEFA"
     tools:context=".MainActivity">
 
     <Button
@@ -70,26 +71,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="SUN"
-            android:textColor="@color/gray"
+            android:text="MON"
+            android:textColor="@color/cram"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="MON"
-            android:textColor="@color/gray"
-            android:textAlignment="center"
-            android:textSize="16sp"/>
+
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TUE"
-            android:textColor="@color/gray"
+            android:textColor="@color/cram"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -98,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="WED"
-            android:textColor="@color/gray"
+            android:textColor="@color/cram"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -107,7 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="THUR"
-            android:textColor="@color/gray"
+            android:textColor="@color/cram"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -116,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="FRI"
-            android:textColor="@color/gray"
+            android:textColor="@color/cram"
             android:textAlignment="center"
             android:textSize="16sp"/>
 
@@ -125,7 +119,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="SAT"
-            android:textColor="@color/gray"
+            android:textColor="@color/cram"
+            android:textAlignment="center"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SUN"
+            android:textColor="@color/cram"
             android:textAlignment="center"
             android:textSize="16sp"/>
 

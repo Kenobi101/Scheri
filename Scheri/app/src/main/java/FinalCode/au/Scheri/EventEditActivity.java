@@ -2,8 +2,10 @@ package FinalCode.au.Scheri;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -28,6 +30,9 @@ public class EventEditActivity extends AppCompatActivity
         eventDateTV.setText("Date: " + CalendarUtils.formattedDate(CalendarUtils.selectedDate));
         eventTimeTV.setText("Time: " + CalendarUtils.formattedTime(time));
 
+
+
+
     }
 
     private void initWidgets()
@@ -43,5 +48,10 @@ public class EventEditActivity extends AppCompatActivity
         Event newEvent = new Event(eventName, CalendarUtils.selectedDate, time);
         Event.eventsList.add(newEvent);
         finish();
+    }
+
+    public void alarmview(){
+        Intent intent = new Intent(this, AlarmReceiver.class);
+        startActivity(intent);
     }
 }

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
 
-    
+
 
 
     @Override

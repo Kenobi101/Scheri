@@ -20,6 +20,10 @@ public class EventEditActivity extends AppCompatActivity
 
     private LocalTime time;
 
+    Button button;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -29,6 +33,14 @@ public class EventEditActivity extends AppCompatActivity
         time = LocalTime.now();
         eventDateTV.setText("Date: " + CalendarUtils.formattedDate(CalendarUtils.selectedDate));
         eventTimeTV.setText("Time: " + CalendarUtils.formattedTime(time));
+
+        button  = (Button) findViewById(R.id.scheduleAlarm);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alarmview();
+            }
+        });
 
 
 

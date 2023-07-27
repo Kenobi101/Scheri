@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.lang.*;
@@ -23,8 +24,7 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
 
-    EditText userId, password, name;
-    Button register;
+    
 
 
     @Override

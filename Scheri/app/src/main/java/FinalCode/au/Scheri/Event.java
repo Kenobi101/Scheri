@@ -22,7 +22,7 @@ public class Event
     }
 
 
-    private String name;
+    private static String name;
     private LocalDate date;
     private LocalTime time;
 
@@ -33,7 +33,7 @@ public class Event
         this.time = time;
     }
 
-    public String getName()
+    public static String getName()
     {
         return name;
     }

@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ListView;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+
 
 import static FinalCode.au.Scheri.CalendarUtils.daysInWeekArray;
 import static FinalCode.au.Scheri.CalendarUtils.monthYearFromDate;
@@ -97,10 +99,11 @@ public class ScheduleView extends AppCompatActivity implements CalendarAdapter.O
     }
 
     public void deleteEventAction(View view){
-        try {
-            startActivity();
-        }catch (Exception e){
-            System.out.println("Schedule Deleted" + e.getMessage());
+        if(Event.eventsList.size() > 0){
+            if(!Event.getName().toString().isEmpty()){
+                Event.eventsList.remove(Event.getName().toString());
+            }
+            }
         }
-    }
 }
+

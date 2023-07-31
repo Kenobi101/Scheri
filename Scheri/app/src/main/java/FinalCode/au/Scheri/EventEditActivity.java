@@ -47,20 +47,20 @@ public class EventEditActivity extends AppCompatActivity
 
     }
 
-    private void initWidgets()
-    {
+    private void initWidgets() {
         eventNameET = findViewById(R.id.eventNameET);
         eventDateTV = findViewById(R.id.eventDateTV);
 
     }
 
-    public void saveEventAction(View view)
-    {
+    public void saveEventAction(View view) {
         String eventName = eventNameET.getText().toString();
         Event newEvent = new Event(eventName, CalendarUtils.selectedDate, time);
         Event.eventsList.add(newEvent);
         finish();
     }
+
+
 
     public void alarmview(){
         Intent intent = new Intent(this, AlarmReceiver.class);

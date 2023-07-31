@@ -95,4 +95,12 @@ public class ScheduleView extends AppCompatActivity implements CalendarAdapter.O
         }
 
     }
+
+    public void deleteEventAction(View view){
+        try {
+            startActivity();
+        }catch (Exception e){
+            System.out.println("Schedule Deleted" + e.getMessage());
+        }
+    }
 }

@@ -145,6 +145,7 @@
         android:layout_gravity="center_horizontal"
         android:background="@null"
         android:text="Delete"
+        android:onClick=""
         android:textColor="@color/red"
         android:textSize="20sp"
         android:textStyle="bold" />

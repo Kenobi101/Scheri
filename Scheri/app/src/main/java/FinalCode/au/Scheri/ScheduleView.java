@@ -88,6 +88,11 @@ public class ScheduleView extends AppCompatActivity implements CalendarAdapter.O
 
     public void newEventAction(View view)
     {
-        startActivity(new Intent(this, EventEditActivity.class));
+        try {
+            startActivity(new Intent(this, EventEditActivity.class));
+        }catch (Exception e){
+            System.out.println("New Schedule: " + e.getMessage());
+        }
+
     }
 }

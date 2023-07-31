@@ -49,7 +49,7 @@
         android:textAlignment="center"
         android:textColor="@color/red"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
     <Button
         android:layout_marginTop="20dp"

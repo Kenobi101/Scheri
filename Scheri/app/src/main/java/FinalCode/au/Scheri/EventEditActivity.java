@@ -16,7 +16,7 @@ import FinalCode.au.Scheri.R;
 public class EventEditActivity extends AppCompatActivity
 {
     private EditText eventNameET;
-    private TextView eventDateTV, eventTimeTV;
+    private TextView eventDateTV;
 
     private LocalTime time;
 
@@ -32,7 +32,7 @@ public class EventEditActivity extends AppCompatActivity
         initWidgets();
         time = LocalTime.now();
         eventDateTV.setText("Date: " + CalendarUtils.formattedDate(CalendarUtils.selectedDate));
-        eventTimeTV.setText("Time: " + CalendarUtils.formattedTime(time));
+
 
         button  = (Button) findViewById(R.id.scheduleAlarm);
         button.setOnClickListener(new View.OnClickListener() {

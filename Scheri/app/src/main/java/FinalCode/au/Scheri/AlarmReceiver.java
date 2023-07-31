@@ -15,7 +15,7 @@ public class AlarmReceiver extends BroadcastReceiver{
 
         Intent i = new Intent(context,DestinationActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivities(context, 0, i , 0);
+        //PendingIntent pendingIntent = PendingIntent.getActivities(context, 0, i , 0);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "Scheri Application")
         .setSmallIcon(R.drawable.ic_launcher_background)

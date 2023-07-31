@@ -21,10 +21,9 @@ import java.lang.*;
 
 public class MainActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {
+    Button logoutbutton;
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
-
-
 
 
     @Override
@@ -35,6 +34,14 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
         initWidgets();
         CalendarUtils.selectedDate = LocalDate.now();
         setMonthView();
+
+        logoutbutton = (Button) findViewById(R.id.login);
+        logoutbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logInPage();
+            }
+        });
 
     }
 
@@ -79,9 +86,16 @@ public class MainActivity extends AppCompatActivity implements CalendarAdapter.O
 
     public void weeklyAction(View view)
     {
+
         startActivity(new Intent(this, ScheduleView.class));
     }
+
+    public  void logInPage(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
 }
+
 
 
 

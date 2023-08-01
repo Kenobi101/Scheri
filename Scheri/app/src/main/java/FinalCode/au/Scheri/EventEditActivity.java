@@ -22,6 +22,7 @@ public class EventEditActivity extends AppCompatActivity
     private LocalTime time;
 
     Button button;
+    Button scheduleButton;
 
 
 
@@ -45,7 +46,6 @@ public class EventEditActivity extends AppCompatActivity
 
 
 
-
     }
 
     private void initWidgets() {
@@ -65,6 +65,6 @@ public class EventEditActivity extends AppCompatActivity
 
     public void alarmview(){
         Intent intent = new Intent(this, AlarmReceiver.class);
-        startActivity(intent);
+        setContentView(R.layout.alarm_view);
     }
 }

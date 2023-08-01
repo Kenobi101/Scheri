@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.ListView;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,32 +18,42 @@ import java.util.ArrayList;
 import static FinalCode.au.Scheri.CalendarUtils.daysInWeekArray;
 import static FinalCode.au.Scheri.CalendarUtils.monthYearFromDate;
 
-import FinalCode.au.Scheri.R;
-
-public class ScheduleView extends AppCompatActivity implements CalendarAdapter.OnItemListener
-{
+public class ScheduleView extends AppCompatActivity implements CalendarAdapter.OnItemListener {
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private ListView eventListView;
+    Button deleteButton;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.schedule_view);
         initWidgets();
         setWeekView();
+        deleteButton = (Button) findViewById(R.id.delete);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteEventAction();
+            }
+        });
+
+
     }
 
-    private void initWidgets()
-    {
+
+
+
+    private void initWidgets() {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
         eventListView = findViewById(R.id.eventListView);
     }
 
-    private void setWeekView()
-    {
+    private void setWeekView() {
         monthYearText.setText(monthYearFromDate(CalendarUtils.selectedDate));
         ArrayList<LocalDate> days = daysInWeekArray(CalendarUtils.selectedDate);
 
@@ -55,55 +65,49 @@ public class ScheduleView extends AppCompatActivity implements CalendarAdapter.O
     }
 
 
-    public void previousWeekAction(View view)
-    {
+    public void previousWeekAction(View view) {
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusWeeks(1);
         setWeekView();
     }
 
-    public void nextWeekAction(View view)
-    {
+    public void nextWeekAction(View view) {
         CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusWeeks(1);
         setWeekView();
     }
 
     @Override
-    public void onItemClick(int position, LocalDate date)
-    {
+    public void onItemClick(int position, LocalDate date) {
         CalendarUtils.selectedDate = date;
         setWeekView();
     }
 
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
         setEventAdpater();
     }
 
-    private void setEventAdpater()
-    {
+    private void setEventAdpater() {
         ArrayList<Event> dailyEvents = Event.eventsForDate(CalendarUtils.selectedDate);
         EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
         eventListView.setAdapter(eventAdapter);
     }
 
-    public void newEventAction(View view)
-    {
+    public void newEventAction(View view) {
         try {
             startActivity(new Intent(this, EventEditActivity.class));
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("New Schedule: " + e.getMessage());
         }
 
     }
 
-    public void deleteEventAction(View view){
-        if(Event.eventsList.size() > 0){
-            if(!Event.getName().toString().isEmpty()){
-                Event.eventsList.remove(Event.getName().toString());
-            }
-            }
+
+
+    public void deleteEventAction(){
+        if (Event.eventsList.size() > 0){
+            Event.eventsList.remove(toString());
         }
+    }
 }
 

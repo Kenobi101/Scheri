@@ -145,7 +145,7 @@
         android:layout_gravity="center_horizontal"
         android:background="@null"
         android:text="Delete"
-        android:onClick="deleteEventAction"
+        android:id="@+id/delete"
         android:textColor="@color/red"
         android:textSize="20sp"
         android:textStyle="bold" />

@@ -21,7 +21,6 @@ public class EventEditActivity extends AppCompatActivity
 
     private LocalTime time;
 
-    Button button;
     Button scheduleButton;
 
 
@@ -36,13 +35,14 @@ public class EventEditActivity extends AppCompatActivity
         eventDateTV.setText("Date: " + CalendarUtils.formattedDate(CalendarUtils.selectedDate));
 
 
-        button  = (Button) findViewById(R.id.scheduleAlarm);
-        button.setOnClickListener(new View.OnClickListener() {
+        scheduleButton  = (Button) findViewById(R.id.scheduleAlarm);
+        scheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                alarmview();
+                alarmView();
             }
         });
+
 
 
 
@@ -63,8 +63,9 @@ public class EventEditActivity extends AppCompatActivity
 
 
 
-    public void alarmview(){
-        Intent intent = new Intent(this, AlarmReceiver.class);
-        setContentView(R.layout.alarm_view);
+    public void alarmView(){
+        int alarm = 1;
+        Intent i = new Intent(this, AlarmActivity.class);
+        startActivityForResult(i, alarm);
     }
 }

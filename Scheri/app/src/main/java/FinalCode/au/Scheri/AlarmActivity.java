@@ -46,7 +46,7 @@ public class AlarmActivity extends AppCompatActivity implements TimePickerDialog
             public void onClick(View view) {
                 DialogFragment timePicker = new TimePickerFragment();
                 timePicker.show(getSupportFragmentManager(), "time picker");
-                alarmView();
+                //alarmView();
             }
         });
 
@@ -62,7 +62,7 @@ public class AlarmActivity extends AppCompatActivity implements TimePickerDialog
 
     public void alarmView(){
         Intent returnIntent = new Intent();
-        returnIntent.putExtra("result","");
+        returnIntent.putExtra("result", "");
         setResult(Activity.RESULT_OK,returnIntent);
         finish();
     }
@@ -78,6 +78,7 @@ public class AlarmActivity extends AppCompatActivity implements TimePickerDialog
 
         updateTimeText(c);
         startAlarm(c);
+        alarmView();
 
     }
 
@@ -92,15 +93,15 @@ public class AlarmActivity extends AppCompatActivity implements TimePickerDialog
     private void startAlarm(Calendar c){
         AlarmManager AlarmManager = (android.app.AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,1, intent,0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, PendingIntent.FLAG_IMMUTABLE);
 
-        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+        alarmManager.setExact(android.app.AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
 
     private void cancelAlarm(){
         AlarmManager AlarmManager = (android.app.AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,1, intent,0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, PendingIntent.FLAG_IMMUTABLE);
 
         alarmManager.cancel(pendingIntent);
         mTextView.setText("Alarm Canceled");

@@ -1,5 +1,6 @@
 package FinalCode.au.Scheri;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -46,7 +47,7 @@ public class AlarmActivity extends AppCompatActivity implements TimePickerDialog
             public void onClick(View view) {
                 DialogFragment timePicker = new TimePickerFragment();
                 timePicker.show(getSupportFragmentManager(), "time picker");
-                //alarmView();
+                alarmView();
             }
         });
 
@@ -78,7 +79,7 @@ public class AlarmActivity extends AppCompatActivity implements TimePickerDialog
 
         updateTimeText(c);
         startAlarm(c);
-        alarmView();
+        //alarmView();
 
     }
 
@@ -98,6 +99,7 @@ public class AlarmActivity extends AppCompatActivity implements TimePickerDialog
         alarmManager.setExact(android.app.AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
 
+    @SuppressLint("SetTextI18n")
     private void cancelAlarm(){
         AlarmManager AlarmManager = (android.app.AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlarmReceiver.class);

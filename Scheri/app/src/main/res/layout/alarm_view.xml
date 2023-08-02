@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#BADEFA"
     android:orientation="vertical">
 
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="50dp"
-        android:gravity="center_horizontal"
-        android:text="09:00 AM"
-        android:textColor="#F44336"
+        android:layout_marginTop="90sp"
+        android:text="No Alarm Set"
+        android:textAlignment="center"
+        android:textColor="@color/red"
         android:textSize="50sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"></TextView>
 
     <Button
         android:id="@+id/setAlarm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="250dp"
         android:text="Set Alarm"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -33,10 +34,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="300dp"
         android:text="Cancel Alarm"
         android:textSize="20sp"
         android:textStyle="bold"
         android:backgroundTint="#25EAEA"
         android:textColor="#DC2F22"/>
-</LinearLayout>
+
+</RelativeLayout>

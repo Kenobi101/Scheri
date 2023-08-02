@@ -23,6 +23,7 @@
 
         </activity>
         <activity android:name="FinalCode.au.Scheri.AlarmActivity"></activity>
+        <receiver android:name=".AlarmReceiver"></receiver>
 
     </application>
 

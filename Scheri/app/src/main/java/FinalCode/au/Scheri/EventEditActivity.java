@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.LocalDate;
@@ -60,7 +61,7 @@ public class EventEditActivity extends AppCompatActivity
 
         dateTime = CalendarUtils.selectedDate.atTime(0, 0, 0);
 
-        eventDateTV.setText("Date: " + CalendarUtils.formattedDate(dateTime.toLocalDate));
+        eventDateTV.setText("Date: " + CalendarUtils.formattedDate(dateTime.toLocalDate()));
 
 
         scheduleButton  = (Button) findViewById(R.id.scheduleAlarm);
@@ -75,7 +76,7 @@ public class EventEditActivity extends AppCompatActivity
 
 
 
-    }
+
 
     public LocalDate convertToLocalDateViaInstant(Date dateToConvert) {
         return dateToConvert.toInstant()
@@ -105,7 +106,7 @@ public class EventEditActivity extends AppCompatActivity
 
 
         String eventName = eventNameET.getText().toString();
-        Event newEvent = new Event(eventName, dateTime.toLocalDate(), dateTime.toLocalTime);
+        Event newEvent = new Event(eventName, dateTime.toLocalDate(), dateTime.toLocalTime());
         Event.eventsList.add(newEvent);
         finish();
     }
@@ -116,10 +117,12 @@ public class EventEditActivity extends AppCompatActivity
         intent.putExtra("eventName", eventNameET.getText().toString());
 
         alarmManager.setExactAndAllowWhileIdle(
-                AlarmManager.RTC_WAKEUP, dateTime.atZone(ZoneId.systemDefault().toInstant().toEpochMilli()),
+                AlarmManager.RTC_WAKEUP, dateTime.atZone(ZoneId.systemDefault().toInstant.toEpochMili),
                 PendingIntent.getBroadcast(this, 1, intent,PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE)
         );
     }
+
+    public Instant
 
 
 

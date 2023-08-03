@@ -23,13 +23,14 @@ import java.util.Calendar;
 
 import FinalCode.au.Scheri.R;
 
-public class AlarmActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
+public class AlarmActivity extends AppCompatActivity{
 
     private TextView mTextView;
 
     Button setAlarmButton;
     Button cancelAlarmButton;
     AlarmManager alarmManager;
+    int hourOfDayAlarm, minutesAlarm, hourOfDay, minutes;
 
 
 
@@ -39,15 +40,26 @@ public class AlarmActivity extends AppCompatActivity implements TimePickerDialog
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alarm_view);
 
-        mTextView = findViewById(R.id.textView);
+        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
+        hourOfDayAlarm = timePicker.getHour();
+        minutesAlarm = timePicker.getMinute();
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker timePicker, int i, int i1) {
+                hourOfDayAlarm = hourOfDay;
+                minutesAlarm = minutes;
+            }
+        });
 
         setAlarmButton  = (Button) findViewById(R.id.setAlarm);
         setAlarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogFragment timePicker = new TimePickerFragment();
-                timePicker.show(getSupportFragmentManager(), "time picker");
-                alarmView();
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("hourOfDayAlarm", hourOfDayAlarm);
+                returnIntent.putExtra("minutesAlarm", minutesAlarm);
+                setResult(Activity.RESULT_OK, returnIntent);
+                finish();
             }
         });
 
@@ -55,58 +67,12 @@ public class AlarmActivity extends AppCompatActivity implements TimePickerDialog
         cancelAlarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cancelAlarm();
+                Intent returnIntent = new Intent();
+                setResult(Activity.RESULT_CANCELED, returnIntent);
+                finish();
             }
         });
 
-    }
-
-    public void alarmView(){
-        Intent returnIntent = new Intent();
-        returnIntent.putExtra("result", "");
-        setResult(Activity.RESULT_OK,returnIntent);
-        finish();
-    }
-
-
-    @Override
-    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
-
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
-        c.set(Calendar.MINUTE, minute);
-        c.set(Calendar.SECOND, 0);
-
-        updateTimeText(c);
-        startAlarm(c);
-        //alarmView();
+        }
 
     }
-
-    private void updateTimeText(Calendar c){
-
-        String timeText = "Alarm Set For:";
-        timeText += DateFormat.getTimeInstance(DateFormat.SHORT).format(c.getTime());
-
-        mTextView.setText(timeText);
-    }
-
-    private void startAlarm(Calendar c){
-        AlarmManager AlarmManager = (android.app.AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, PendingIntent.FLAG_IMMUTABLE);
-
-        alarmManager.setExact(android.app.AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
-    }
-
-    @SuppressLint("SetTextI18n")
-    private void cancelAlarm(){
-        AlarmManager AlarmManager = (android.app.AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, PendingIntent.FLAG_IMMUTABLE);
-
-        alarmManager.cancel(pendingIntent);
-        mTextView.setText("Alarm Canceled");
-    }
-
-}

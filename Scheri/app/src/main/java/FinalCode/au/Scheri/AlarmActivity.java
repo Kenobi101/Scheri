@@ -46,8 +46,8 @@ public class AlarmActivity extends AppCompatActivity{
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker timePicker, int i, int i1) {
-                hourOfDayAlarm = hourOfDay;
-                minutesAlarm = minutes;
+                hourOfDayAlarm = i;
+                minutesAlarm = i1;
             }
         });
 

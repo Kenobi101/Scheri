@@ -117,19 +117,20 @@ public class EventEditActivity extends AppCompatActivity
         intent.putExtra("eventName", eventNameET.getText().toString());
 
         alarmManager.setExactAndAllowWhileIdle(
-                AlarmManager.RTC_WAKEUP, dateTime.atZone(ZoneId.systemDefault().toInstant.toEpochMili),
+                AlarmManager.RTC_WAKEUP, dateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli(),
                 PendingIntent.getBroadcast(this, 1, intent,PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE)
         );
     }
 
-    public Instant
 
 
 
     public void alarmView(){
         int alarm = 1;
         Intent i = new Intent(this, AlarmActivity.class);
+        startActivityForResult(i, 1);
     }
+
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -138,7 +139,7 @@ public class EventEditActivity extends AppCompatActivity
 
         if(requestCode == 1){
             if(resultCode == Activity.RESULT_OK && data.getExtras() !=null){
-                hourOfDayAlarm = data.getIntExtra("hourofDayAlarm", -1);
+                hourOfDayAlarm = data.getIntExtra("hourOfDayAlarm", -1);
                 minutesAlarm = data.getIntExtra("minutesAlarm", -1);
 
                 eventTime.setText("Alarm on = " + hourOfDayAlarm + " : " + minutesAlarm);

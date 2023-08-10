@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.icu.text.DateIntervalFormat;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,35 +15,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.ZoneOffset;
-import java.time.chrono.ChronoZonedDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-
-import java.time.LocalTime;
 import java.util.Date;
-import java.util.Locale;
-
-import FinalCode.au.Scheri.R;
 
 
 public class EventEditActivity extends AppCompatActivity
 {
     private EditText eventNameET;
     private TextView eventDateTV;
-    private TextView eventTimeTV, eventTime;
+    private TextView eventTime;
     int hourOfDayAlarm = -1;
     int minutesAlarm = -1;
     LocalDateTime dateTime;
 
-
-    private LocalTime time;
 
     Button scheduleButton;
 
